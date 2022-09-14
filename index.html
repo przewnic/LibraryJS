@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="./styles/style.css" type="text/css">
+    <script src="./src/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Library</h1>
+    </header>
+    <main>
+        <div>
+            <p>Books</p>
+            <button id="add-bttn">Add book</button>
+        </div>
+        <div id="cards-container"></div>
+        <div></div>
+    </main>
+    <footer>
+        <p>Copyright 2022</p>
+    </footer>
+    <div id="form-container">
+        <h3>Add new book to the library</h3>
+        <button id="cancel-bttn">Cancel</button>
+        <form id="add-form">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+            <label for="pages">Pages</label>
+            <input type="text" id="pages" name="pages">
+            <label for="read-status">Read</label>
+            <input type="checkbox" id="read-status" name="read-status" value="True">
+
+            <input id="submit-bttn" type="button" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
