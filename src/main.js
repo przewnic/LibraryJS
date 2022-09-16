@@ -80,7 +80,7 @@ function createCard(book) {
 
     const controls = document.createElement("div");
     controls.className = "card-controls";
-    card.appendChild(control);
+    card.appendChild(controls);
 
     const removeButton = document.createElement("button");
     removeButton.innerHTML = "X";
