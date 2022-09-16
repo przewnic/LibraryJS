@@ -1,0 +1,91 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;;
+
+}
+
+header {
+    text-align: center;
+    font-family: 'Aref Ruqaa Ink', serif;
+    background-color: #002b5b;
+}
+
+footer {
+    text-align: center;
+    background-color:#002b5b;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.books-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 2vw;
+}
+
+.book-card {
+    padding: 2vw;
+    box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+    border-radius: 0.5vw;
+    border: 1px gold solid;
+    background-color: #002a5bcc;
+    color: white;
+}
+
+/* Form */
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 25%;
+    left: 5%;
+    right: 5%;
+    padding: 2vw;
+    background-color: rgba(211, 211, 211, 0.7);
+}
+
+.row-container {
+    display: flex;
+    padding: 1vw 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vw;
+}
+
+.row-container > label {
+    min-width: 10vw;
+}
+
+button, input[type="button"] {
+    border: none;
+    padding: 1vw;
+    background-color: #002b5b;
+    color: white;
+    margin-left: 2vw;
+}
