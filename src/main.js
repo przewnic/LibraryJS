@@ -1,56 +1,4 @@
-class MyLibrary {
-    static id_count = 0;
-
-    constructor() {
-        this.books = [];
-    }
-
-    getBook(id) {
-        return this.books.find(element => element.id.toString() === id);
-    }
-    
-    addBook(author, title, pages, read=false) {
-        const new_id = this._get_new_id();
-        const new_book = new Book(new_id, author, title, pages, read)
-        this.books.push(new_book);
-        return new_book;
-    }
-
-    removeBook(remove_id) {
-        this.books = this.books.filter(book => book.id !== remove_id)
-    }
-
-    toggleBookStatus(book_id) {
-        const book = this.books.find(element => element.id.toString()===book_id);
-        book.toggleStatus();
-    }
-
-    _get_new_id() {
-        MyLibrary.id_count += 1;
-        return MyLibrary.id_count;
-    }
-
-    sortBooks() {
-        // TODO --- sorting books in the list, display by title
-    }
-
-}
-
-
-class Book {
-    constructor(id, author, title, pages, read=false) {
-        this.id = id,
-        this.author = author,
-        this.title = title,
-        this.pages = pages,
-        this.read = read
-    }
-
-    toggleStatus() {
-        this.read = this.read ? false : true;
-    }
-}
-
+import MyLibrary from "./MyLibrary.js"
 
 
 const myLibrary = new MyLibrary();
@@ -130,17 +78,21 @@ function createCard(book) {
     read.classList.add("read-status");
     card.appendChild(read);
 
+    const controls = document.createElement("div");
+    controls.className = "card-controls";
+    card.appendChild(control);
+
     const removeButton = document.createElement("button");
     removeButton.innerHTML = "X";
     removeButton.id = `${book.id}`;
     removeButton.addEventListener("click", removeBook);
-    card.appendChild(removeButton);
+    controls.appendChild(removeButton);
 
     const toggleStatusButton = document.createElement("button");
     toggleStatusButton.innerHTML = "Read";
     toggleStatusButton.id = `${book.id}`;
     toggleStatusButton.addEventListener("click", toggleStatusAction);
-    card.appendChild(toggleStatusButton);
+    controls.appendChild(toggleStatusButton);
 
     return card;
 }

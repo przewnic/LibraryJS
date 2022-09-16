@@ -1,11 +1,78 @@
 html, body {
     margin: 0;
+    padding: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+header {
+    text-align: center;
+    background-color: rgba(65, 105, 225, 1);
+}
+
+footer {
+    text-align: center;
+    background-color:royalblue;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    justify-content: flex-start;
+    height: 100%;
 }
 
+.books-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-bttn {
+    padding: 0 2vw;
+    margin: 0 2vw;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 2vw;
+}
+
+.book-card {
+    padding: 0;
+    box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+    border-radius: 0.5vw;
+    border: none;
+    max-width: 20vw;
+}
+
+/* Form */
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 25%;
+    left: 5%;
+    right: 5%;
+    padding: 2vw;
+
+    background-color: lightgray;
+}
+
+.row-container {
+    padding: 1vw;
+    display: flex;
+}
+
+.row-container > label {
+    min-width: 10vw;
+}
