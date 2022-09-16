@@ -52,7 +52,7 @@ function toggleStatusAction(e) {
 
 function removeBook(e) {
     myLibrary.removeBook(e.target.id);
-    e.target.parentNode?.remove();
+    e.target.parentNode.parentNode?.remove();
 
 }
 
