@@ -2,6 +2,8 @@
 
 > Library Application with JavaScript
 
+> See the progress of development <a href="https://przewnic.github.io/LibraryJS/">here</a>.
+
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
