@@ -1,3 +1,7 @@
+:root {
+    --ocean-blue: #002b5b;
+    --cards-blue: #004391; 
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -9,46 +13,90 @@ html, body {
 
 }
 
-header {
+header, footer {
     text-align: center;
-    font-family: 'Aref Ruqaa Ink', serif;
-    background-color: #002b5b;
+    background-color: var(--ocean-blue);
+    height: 52px;
 }
 
-footer {
+header {
+    font-family: 'Aref Ruqaa Ink', serif;
     text-align: center;
-    background-color:#002b5b;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     height: 100%;
 }
 
 .books-add {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 60vw;
+    max-width: 600px;
 }
 
+button, input[type="button"] {
+    border: none;
+    padding: 0.5vw 1vw;
+    background-color: white;
+    color: black;
+    border: 2px solid var(--ocean-blue);
+    border-radius: 1vw;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: var(--ocean-blue);
+    color: white;
+}
+
+/* Cards */
+
 #cards-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 1vw;
-    padding-left: 20%;
-    padding-right: 20%;
     margin-bottom: 2vw;
 }
 
 .book-card {
-    padding: 2vw;
-    box-shadow: 0 0 1vw rgba(0,0,0,0.5);
-    border-radius: 0.5vw;
-    border: 1px gold solid;
-    background-color: #002a5bcc;
-    color: white;
+    padding: 1vw;
+    box-shadow: 0 1.2vw 1.2vw 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2vw;
+    border: 2px var(--ocean-blue) solid;
+    color: black;
+    min-width: 200px;
+    min-height: 200px;
+    width: 80vw;
+    max-width: 350px;
+}
+
+.book-card p {
+    margin: 5px;
+}
+
+.card-tag {
+    color: grey;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: min(1.2vw, 12px);
+}
+
+.card-controls {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 /* Form */
@@ -58,18 +106,21 @@ main {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 25%;
-    left: 5%;
-    right: 5%;
-    padding: 2vw;
-    background-color: rgba(211, 211, 211, 0.7);
+    top: 10%;
+    width: 100vw;
+    background-color: rgba(211, 211, 211, 0.95);
+}
+
+#add-form {
+    width: 80%;
 }
 
 .row-container {
     display: flex;
-    padding: 1vw 0;
-    justify-content: center;
+    min-width: 80%;
+    justify-content: space-between;
     align-items: center;
+    padding: 1vw 0;
 }
 
 .col-container {
@@ -78,14 +129,15 @@ main {
     padding-top: 1vw;
 }
 
-.row-container > label {
-    min-width: 10vw;
-}
+@media screen and (min-width: 900px) {
+    #cards-container {
+        flex-direction: unset;
+        flex-wrap: wrap;
+        max-width: 1500px;
+    }
 
-button, input[type="button"] {
-    border: none;
-    padding: 1vw;
-    background-color: #002b5b;
-    color: white;
-    margin-left: 2vw;
+    #form-container {
+        left: 30%;
+        width: 40vw;
+    }
 }
