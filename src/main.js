@@ -17,6 +17,9 @@ hideForm();  // Hide the add book form initially
 addBook("Tolkien", "The Lord of the Rings", 500, false);
 addBook("Tolkien", "Hobbit", 310, false);
 addBook("Tolkien", "The Silmarillon", 500, false);
+addBook("John Smith", "Real book 1", 110, false);
+addBook("John Smith", "Real book 2", 210, true);
+addBook("John Smith", "Real book 3", 310, false);
 
 
 function addBook(author, title, pages, isRead) {
@@ -50,7 +53,11 @@ function hideForm() {
 function toggleStatusAction(e) {
     myLibrary.toggleBookStatus(e.target.id);
     const status = e.target.parentNode.parentNode.querySelector(".read-status");
-    status.textContent = myLibrary.getBook(e.target.id).read;
+    status.textContent = readStatus(myLibrary.getBook(e.target.id));
+}
+
+function readStatus(book) {
+    return book.read === true ? "Completed":"Still reading";
 }
 
 function removeBook(e) {
@@ -97,7 +104,7 @@ function createCard(book) {
     card.appendChild(readTag);
 
     const read = document.createElement("p");
-    read.textContent = `${book.read}`;
+    read.textContent = `${readStatus(book)}`;
     read.classList.add("read-status");
     card.appendChild(read);
 
