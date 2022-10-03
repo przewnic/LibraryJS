@@ -29,22 +29,26 @@
             <p>Add a book to the library</p>
             <button id="cancel-bttn">Cancel</button>
         </div>
-        <form id="add-form">
+        <form id="add-form" novalidate>
             <div class="col-container">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title">
+                <input type="text" class="init" id="title" name="title" minlength="2" required>
+                <span class="error" aria-live="polite"></span>
             </div>
             <div class="col-container">
                 <label for="author">Author</label>
-                <input type="text" id="author" name="author">
+                <input type="text" class="init" id="author" name="author" minlength="5" required>
+                <span class="error" aria-live="polite"></span>
             </div>
             <div class="col-container">
                 <label for="pages">Pages</label>
-                <input type="text" id="pages" name="pages">
+                <input type="number" class="init" id="pages" name="pages" min="0" required>
+                <span class="error" aria-live="polite"></span>
             </div>
             <div class="row-container">
                 <label for="read-status">Read</label>
                 <input type="checkbox" id="read-status" name="read-status" value="True">
+                <span class="error" aria-live="polite"></span>
             </div>
             <div class="row-container">
                 <label>Click here to add</label>
